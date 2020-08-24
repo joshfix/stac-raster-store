@@ -34,8 +34,12 @@ Note: if testing in a browser, make sure you paste in the right bbox for the giv
 
 ## Limitations
 
-* This version of the store was created and released on a very short time frame and currently only supports the se-geotiff 
-reader from GeoTools. In its current state, this can easily be exapnded to support a gambit of GeoTools readers.
+* This version of the store was created and released on a very short time frame and currently only supports the s3-geotiff 
+reader from GeoTools. In its current state, this can easily be expanded to support a gambit of GeoTools readers.
+* Also note that in it's current state, it's hard-coded to build s3 URLs to us-west-2, which is where the landsat 8
+imagery used for the STAC demo is located.  This URL building is very hacky and static, as it was only built for the 
+purposes of this demo. Instead of investing a lot of time into smartly building s3 urls, I've decided to just wait 
+until the COG reader is released.  Anybody wanting to invest time into this effort is more than welcome to submit a PR.
 * The imagery in the collection is assumed to be in a homogenous CRS. If an attempt is made to render an image from the 
 collection and that image is in a different CRS from the image used to create the store, an error will be generated. 
 
