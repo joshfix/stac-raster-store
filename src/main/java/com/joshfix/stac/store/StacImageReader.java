@@ -124,6 +124,8 @@ public class StacImageReader extends AbstractGridCoverage2DReader {
         }
 
         try {
+            // TODO -- this is an ugly, temporary workaround.  i could build the urls for the s3-geotiff reader MUCH better,
+            // but I intend to switch to the COG reader as soon as it's released, so it's not worth the extra effort at this point.
             URL url = new URL(imageUrl);
             imageUrl = "s3:/" + url.getPath() + "?useAnon=true&awsRegion=US_WEST_2";
         } catch (Exception e) {
